@@ -1,0 +1,27 @@
+name = "404-society"
+main = "worker.ts"
+compatibility_date = "2026-09-27"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+run_worker_first = ["/api/*", "/payment/*"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "404-society"
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+migrations_dir = "migrations"
+
+[vars]
+CASHFREE_MODE = "sandbox"
+SITE_URL = "https://YOUR-DOMAIN.example"
+
+# Set secrets with:
+# wrangler secret put GOOGLE_CLIENT_ID
+# wrangler secret put SESSION_SECRET
+# wrangler secret put SHOPIFY_STORE_DOMAIN
+# wrangler secret put SHOPIFY_STOREFRONT_TOKEN
+# wrangler secret put SHOPIFY_ADMIN_TOKEN
+# wrangler secret put CASHFREE_CLIENT_ID
+# wrangler secret put CASHFREE_CLIENT_SECRET
